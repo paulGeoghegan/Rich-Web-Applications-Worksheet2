@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Phone Directory </title>
+	</head>
+	<body>
+
+		<h1> Phone Directory </h1>
+
+		<div id="newContactForm">
+
+			<label for="contactName">Name</label>
+			<input id="contactName" type="text" required/>
+
+			<label for="contactNumber">Phone Number</label>
+			<input id="contactNumber" type="tel" required/>
+
+			<label for="contactEmail">E-mail</label>
+			<input id="contactEmail" type="email" required/>
+
+			<input id="addContact" type="button" value="Add Contact"/>
+
+		</div>
+
+
+		<div id="error"> </div>
+
+
+		<table id="contactTable">
+			<tr> <th> Name </th> <th> Mobile </th> <th> E-mail </th> </tr>
+		</table>
+
+		<script src="script.js"> </script>
+
+	</body>
+</html>
