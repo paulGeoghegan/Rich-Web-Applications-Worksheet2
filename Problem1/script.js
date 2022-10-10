@@ -1,4 +1,7 @@
 
+let nameDirection = 0
+let phoneDirection = 0
+
 //Adds new contact
 document.getElementById("addContact").addEventListener("click", function(){
 
@@ -22,24 +25,24 @@ document.getElementById("addContact").addEventListener("click", function(){
 
 
 function sortTable(column) {
-	let count = 0
-	let done = false
+	var count
 
-	while(done == false) {
-		let rows = getElementById("contactTable").rows
+	do{
+		let rows = document.getElementById("contactTable").rows
+		let count = 0
 
 		//Loops through rows making sure to skip the first one as that is just the table headers
-		for(let i = 1;i < rows.length;i++) {
-			let r1 = rows[i].getElementsByTagName(column)
-			let r2 = rows[i+1].getElementsByTagName(column)
-
-			if(r1.innerHTML.toLowerCase > yield.innerHTML.toLowerCase) {
-				rows[i]..parentNode.insertBefore(rows[i + 1], rows[i])
+		for(let i = 1;i < (rows.length-1);i++) {
+			r1 = rows[i].getElementsByTagName("td")[column]
+			r2 = rows[i+1].getElementsByTagName("td")[column]
+			console.log("is "+r2.innerHTML+" Greater than "+r2.innerHTML)
+			//Checks if rows need to be swapped
+			if(r1.innerHTML.toLowerCase > r2.innerHTML.toLowerCase) {
+				rows[i].parentNode.insertBefore(rows[i+1], rows[i])
+				count++
 			}
-
 		}
-
 	}
-
+	while(count > 0)
 
 }
