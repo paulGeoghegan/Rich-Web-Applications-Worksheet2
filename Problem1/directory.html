@@ -22,13 +22,20 @@
 
 		</div>
 
-
 		<div id="error"> </div>
 
+		<div id="searchDiv">
+
+			<label for="searchMobile">Search contact by mobile number</label>
+			<input id="searchMobile" type="tel" />
+
+		</div>
 
 		<table id="contactTable">
 			<tr> <th onclick="sortTable(0)"> Name </th> <th onclick="sortTable(1)"> Mobile </th> <th> E-mail </th> </tr>
 		</table>
+
+		<div id="noResults" hidden=true> Sorry there are no matches for your search </div>
 
 		<script src="script.js"> </script>
 
