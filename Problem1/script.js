@@ -33,6 +33,9 @@ function styleTable() {
 			if(i%2 == 1 && rows[i].hidden == false) {
 				rows[i].style.backgroundColor="#f2f2f2"
 			}
+			else {
+				rows[i].style.backgroundColor="white"
+			}
 		}
 
 }
