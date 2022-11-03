@@ -19,7 +19,7 @@ function makeTable(user) {
 	<div>
 		<div class="block">
 			<h2> User Profile </h2>
-
+			<img src="`+user.	`"
 		</div>
 
 		<div class="block">
