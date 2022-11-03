@@ -13,7 +13,9 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
 
 function checkWordCount(value) {
-	if(value.title.split().length > 6) {
-		return value
+	wordCheck = value.title.split(" ")
+	if(wordCheck.length > 6) {
+		console.log(wordCheck.join(" "))
+		return true
 	}
 }
