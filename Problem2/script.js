@@ -6,9 +6,11 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 		console.log(data)
 
 		console.log("Titles with more than 6 words")
-		console.log(data.filter(checkWordCount))
+		filteredTitles = data.filter(checkWordCount)
+		console.log(filteredTitles)
 
 	});
+
 
 function checkWordCount(value) {
 	if(value.title.split().length > 6) {
