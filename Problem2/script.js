@@ -8,7 +8,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 		console.log("Titles with more than 6 words")
 		filteredTitles = data.filter(checkWordCount)
 		console.log(filteredTitles)
-
+		data.forEach(checkFreqCount)
 	});
 
 
@@ -18,4 +18,19 @@ function checkWordCount(value) {
 		console.log(wordCheck.join(" "))
 		return true
 	}
+}
+
+
+function checkFreqCount(value) {
+	freqMap = new Map()
+	freqCheckList = value.body.split(" ")
+	freqCheckList.forEach(element => {
+		if(freqMap[element]) {
+			freqMap.set(element, freqMap.get(element)+1);
+		}
+		else {
+			freqMap.set(element, 1)
+		}
+	});
+	console.log(freqMap)
 }
