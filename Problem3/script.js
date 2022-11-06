@@ -57,7 +57,7 @@ function repoTableMaker(repoListUrl) {
 		console.log(data)
 		repos = data.filter(getRepos)
 		repos.forEach(function(element) {
-			repoTable.innerHTML+=`<tr> <td>`+element+`</td> <td>`+element[1]+`</td> </tr>`
+			repoTable.innerHTML+=`<tr> <td>`+element.name+`</td> <td>`+element.description+`</td> </tr>`
 		});
 	});
 	return repoTable
@@ -66,7 +66,6 @@ function repoTableMaker(repoListUrl) {
 
 //This function will return each repo name and description
 function getRepos(value) {
-	repo = [value.name,String(value.description)]
-	console.log(repo)
+	repo = [value.name,value.description]
 	return repo
 }
