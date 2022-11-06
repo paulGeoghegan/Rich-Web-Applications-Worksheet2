@@ -42,19 +42,31 @@ function makeTable(user) {
 
 `
 
-	document.getElementById("repoListDiv").appendChild(repoListMaker(user.repos_url))
+	document.getElementById("repoListDiv").appendChild(repoTableMaker(user.repos_url))
 
 }
 
 
-//This creates the repo list
-function repoListMaker(repoListUrl) {
+//This creates the repo table
+function repoTableMaker(repoListUrl) {
+
+	repoTable = document.createElement("table")
 
 	fetch(repoListUrl).then((response) => response.json())
 	.then(function(data) {
 		console.log(data)
+		repos = data.filter(getRepos)
+		repos.forEach(function(element) {
+			repoTable.innerHTML+=`<tr> <td>`+element+`</td> <td>`+element[1]+`</td> </tr>`
+		});
 	});
+	return repoTable
+}
 
 
-
+//This function will return each repo name and description
+function getRepos(value) {
+	repo = [value.name,String(value.description)]
+	console.log(repo)
+	return repo
 }
